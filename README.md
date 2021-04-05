@@ -1,1 +1,2 @@
-# Examples - Raspberry Pi Pico development platform for PlatformIO
+# Raspberry Pi Pico development platform for PlatformIO
+## Examples
