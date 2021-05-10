@@ -1,0 +1,9 @@
+{
+    "name": "SST",   
+    "platforms" : ["wizio-pico"], 
+    "frameworks": ["*"],
+    "export": {
+        "exclude": [], 
+        "include": null
+    }
+}
