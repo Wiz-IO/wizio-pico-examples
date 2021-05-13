@@ -5,6 +5,8 @@
 
 char buf[256];
 
+#define FILE_NAME "0:/test.txt"
+
 int main(void)
 {
     stdio_init_all();
@@ -14,14 +16,28 @@ int main(void)
 
     vfs_init(); // see vfs_config.h
 
+    int res, fd;
+
+    fd = open(FILE_NAME, O_WRONLY | O_CREAT | O_TRUNC);
+    printf("File FD = %d\n", fd);
+    if (fd > 0)
+    {
+        sprintf(buf, "Hello World 2021");
+        res = write(fd, buf, strlen(buf));
+        printf("\n(writed %d bytes) %s\n", res, buf);
+        close(fd);
+    }
+    else
+        perror("Error: ");
+
     memset(buf, 0, sizeof(buf));
-    
-    int res, fd = open("0:/test.txt", O_RDONLY);
+
+    fd = open(FILE_NAME, O_RDONLY);
     printf("File FD = %d\n", fd);
     if (fd > 0)
     {
         res = read(fd, buf, sizeof(buf));
-        printf("\n(%d bytes) %s\n", res, buf);
+        printf("\n(readed %d bytes) %s\n", res, buf);
         close(fd);
     }
     else
