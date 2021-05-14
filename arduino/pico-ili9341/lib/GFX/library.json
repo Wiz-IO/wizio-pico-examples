@@ -1,0 +1,9 @@
+{
+    "name": "GFX",   
+    "platforms" : ["wizio-pico"], 
+    "frameworks": ["*"],
+    "export": {
+        "exclude": [], 
+        "include": null
+    }
+}
