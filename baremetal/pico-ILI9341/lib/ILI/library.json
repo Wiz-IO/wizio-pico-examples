@@ -1,0 +1,9 @@
+{
+    "name": "ILI9341",   
+    "platforms" : ["wizio-pico"], 
+    "frameworks": ["*"],
+    "export": {
+        "exclude": [], 
+        "include": null
+    }
+}
